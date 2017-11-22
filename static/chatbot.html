@@ -12,28 +12,42 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style>
+      body{
+        padding-top: 65px;
+        padding-bottom: 100px;
+      }
+    </style>
   </head>
-  <body>
   
+  <body>
 <nav class="navbar navbar-dark bg-dark">  <a class="navbar-brand" href="#">Eliza Chatbot</a>
     
-  
-
-  
-    
-  
 </nav>
 
+<div class="container">
+  
+  <ul class="list-group">
+    <li class="list-group-item">Hello, I am Eliza, How are you?</li>
+    
+    <li class="list-group-item list-group-item-primary text-right">{{.ER}}</li>
+    <li class="list-group-item">{{.UR}}</li>
 
 
-    <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Ask Eliza</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text...">
-    <button type="button" class="btn btn-primary">Submit Question</button>
+  </ul>
+</div>
+
+<div class ="fixed-bottom bg-dark p-2">
+  <div class = "container">
+    <form action = "/ElizaChatbot" method="GET">
+      <div class = "form-group">
+          <input type="text" class="form-control" name="userResponse" id = "userInput">
+
+      </div>
+    </form>
   </div>
- 
-</form>
+
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
