@@ -13,10 +13,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <style>
-      body{
-        padding-top: 65px;
-        padding-bottom: 100px;
-      }
+      
     </style>
   </head>
   
@@ -30,8 +27,11 @@
   <ul class="list-group">
     <li class="list-group-item">Hello, I am Eliza, How are you?</li>
     
-    <li class="list-group-item list-group-item-primary text-right">{{.ER}}</li>
-    <li class="list-group-item">{{.UR}}</li>
+    <div class =  "container-fluid">
+      <ul>
+        <ul id ="list"></ul>
+      </ul>
+    </div>
 
 
   </ul>
@@ -39,9 +39,9 @@
 
 <div class ="fixed-bottom bg-dark p-2">
   <div class = "container">
-    <form action = "/ElizaChatbot" method="GET">
+    <form action = "/chatbot" method="GET">
       <div class = "form-group">
-          <input type="text" class="form-control" name="userResponse" id = "userInput">
+          <input type="text" class="form-control" name="userInput" id = "userInput">
 
       </div>
     </form>
@@ -55,4 +55,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
+    <script type="text/javascript">
+
+      //Declaring varibles for html page
+      const UI = $("#userInput");
+      const list = $("conversationList");
+      const userText = UI.val();
+
+
+      if(key.keyCode ==13){
+
+        e.preventDefault();
+
+        console.log(userText);
+
+        bigInput.val(" ");
+
+        list.append("<li class='list-group-item list-group-item-success text-left'>" + "User : " + userText + "</li>");
+      }
+     
+
+
+
+    </script>
+
+
+  
 </html>

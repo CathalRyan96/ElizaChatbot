@@ -26,10 +26,12 @@ func eliza(w http.ResponseWriter, r *http.Request){
 	t.Execute(w, &myMsg{ER:elizaResponse, UR:userResponse})
 }
 
+
+
 func main(){
 	http.Handle("/", http.FileServer(http.Dir("./static")))
 
-	http.HandleFunc("/ElizaChatbot",eliza)
+	http.HandleFunc("/chatbot",eliza)
 
 	http.ListenAndServe(":8080", nil)
 }
