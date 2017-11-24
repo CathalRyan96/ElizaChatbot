@@ -7,7 +7,7 @@ import(
 
 type myMsg struct{
 	ER string
-	UR string
+	UI string
 }
 
 func requestHandler(w http.ResponseWriter, r *http.Request){
@@ -19,11 +19,11 @@ func requestHandler(w http.ResponseWriter, r *http.Request){
 func eliza(w http.ResponseWriter, r *http.Request){
 	elizaResponse := "Hi, how are you today?"
 
-	userResponse := r.FormValue("userResponse")
+	userInput := r.FormValue("userInput")
 
 	t,_ := template.ParseFiles("chatbot.html")
 
-	t.Execute(w, &myMsg{ER:elizaResponse, UR:userResponse})
+	t.Execute(w, &myMsg{ER:elizaResponse, UI:userInput})
 }
 
 

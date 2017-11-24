@@ -27,6 +27,7 @@
   <ul class="list-group">
     <li class="list-group-item">Hello, I am Eliza, How are you?</li>
     
+    <!-- trying to output user input to screen -->
     <div class =  "container-fluid">
       <ul>
         <ul id ="list"></ul>
@@ -62,7 +63,7 @@
       const list = $("conversationList");
       const userText = UI.val();
 
-
+      //adapted from https://css-tricks.com/snippets/javascript/javascript-keycodes/
       if(key.keyCode ==13){
 
         e.preventDefault();
@@ -71,8 +72,18 @@
 
         bigInput.val(" ");
 
-        list.append("<li class='list-group-item list-group-item-success text-left'>" + "User : " + userText + "</li>");
+        list.append("<li class='list-group-item list-group-item-success text-left'>" + "User : " + bigInput + "</li>");
       }
+        /*const queryParams = {"userInput : input"}
+        $.get("/chat", queryParams)
+          .done(function(response){
+            var nextListItem = "<li class='list-group-item list-group-item-success text-left'>" + "User : " + bigInput + "</li>");
+          }
+     */
+     
+      
+
+
      
 
 
